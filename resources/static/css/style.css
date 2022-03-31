@@ -1,0 +1,196 @@
+@font-face {
+	font-family: "custom-font";
+	src: url("Merriweather-Reg.otf");
+}
+@font-face {
+	font-family: "custom";
+	src: url("Merriweather-Black.otf");
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+@media screen and (max-width: 992px){
+	div#slides h1 {
+		font-size:300%;
+	}
+}
+@media screen and (min-width:768px){
+		/* @supports (display:flex) {
+			.container-1 {
+				display: flex;
+			}
+			.box-1 {
+				flex:1;
+			}
+			.box-2 {
+				flex: 1;
+			}
+			.box-3 {
+				flex:1;
+			}
+		} */
+		.padd {
+			padding:0 2.5em;
+		}
+		.font-size-one {
+			font-size: 1.4rem;
+			text-shadow:2px 2px 3px #000;
+		}
+		button.navbar-toggler {
+			float:right!important;
+			margin:0;
+		}
+		ul li a {
+			font-size: 110%;
+		}
+		
+}
+@media screen and (max-width:768px) {
+	.fluid-font {
+		font-size:85%;
+		text-shadow:2px 2px 3px #000;
+	}
+	.input-width {
+		width:70%;
+		margin-right:.5em;
+	}
+	div#slides h1 {
+		font-size:200%;
+	}
+	div#slides h3 {
+		font-size: 110%;
+	}
+	.padd {
+			padding:0 1.2em;
+		}
+	div#lower_text {
+		padding:0!important;
+		padding-top: 3vh!important;
+		font-size:110%;
+	}
+}
+
+@media screen and (max-width:576px){
+	.fluid-font  {
+		font-size:75%;
+		text-shadow:2px 2px 3px #000;
+		margin:0;
+		padding:0;
+	}
+	div#slides {
+		display:none;
+	}
+	.jumbotron > h2 {
+		font-size: 5vh;
+	}
+	.fluid-text {
+		font-size:90%;
+	}
+	.input-width {
+		margin-left: 0!important;
+		width:70%;
+		margin-right:.5em;
+		padding-top:.5em;
+	}
+	.container-fluid, .container > .row, p {
+		margin:0;
+		padding:0;
+		padding-bottom: 3vh;
+		padding-top:0;
+		margin-top:0;
+	}
+	.jumbotron a.btn, .card a.btn {
+		font-size:80%;
+	}
+	div#card_container_row {
+		margin-top: 0!important;
+		padding-top: 0!important;
+	}
+}
+
+@media screen and (min-width:576px){
+	.img-jumbo {
+			position: relative;
+			top: -3vh!important;
+	}
+}
+.padding-right {
+	padding-right: 28vh;
+}
+.bgd {
+	background-image:url("../images/microscope.jpg");
+	background-repeat: no-repeat;
+	background-position: -100px 0px;
+	background-attachments: fixed;
+}
+hr#hor {
+	width: 85%;
+}
+.fixed {
+	width:75%;
+	height:650px;
+	margin:0 auto;
+	background-image: url("../images/microscope.jpg");
+	border-radius: 5px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat:no-repeat;
+	opacity: .65;
+}
+
+ul#my_menu li a:hover {
+	color: #17a2b8;
+	background-color:#e9ecef;
+	border-radius:2vh;
+}
+.text-shadow {
+	text-shadow:2px 2px 5px #000;
+}
+.span-center {
+	display: inline-block;
+	width:100%;
+	margin:auto;
+	border-radius: 5vh;
+}
+.padd p {
+	padding-top: 1em;
+}
+/* .floatLeft {
+		float:left;
+		margin-right:1em;
+		margin-bottom: 0.4em;
+		shape-outside: circle();
+		shape-margin: 5px;
+	} */
+.jumbotron {
+	border-radius: 5vh;
+}
+.jumbotron img {
+	margin-top:0vh;
+	border-radius: 5vh;
+}
+.jumbotron h2, .jumbotron hr + p {
+	font-family: "custom-font", sans-serif;
+}
+div.fixed p {
+	border-radius: 5vh;
+	color: rgba(255,214,94,1);
+	background-color: rgba(104,194,209, .6);
+}
+input[type=search], input[type=search] + button {
+	border-radius: 3vh;
+}
+div#slides h1{
+		font-family: "custom-font", sans-serif;
+		word-spacing: 5px;
+		letter-spacing: 1vh;
+}
+footer {
+	color:#d5d5d5;
+	padding:2rem;
+}
+footer hr.light {
+	border:1px solid grey;
+}

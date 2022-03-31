@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(#{page.title.anex.banding})"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink='G-banding', chromId = '', locusName='', date=${date})"></div>
+<div class="container lead" id="chromosomes">
+	<img th:src="@{/images/titlebar_1.jpg}" class="img-fluid border-lbr" width="1900" height="212" th:alt="#{dna.banding.title}"/>
+	<h1 class="font-weight-bold" th:text="#{dna.banding.title}"></h1>
+	<hr />
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p th:utext="#{dna.banding.paragraph1}"></p>
+		</div>
+	</div>
+	<div class="container-fluid text-center">
+		<img th:src="@{/images/g_banding.jpg}" class="img-fluid img-thumbnail border border-info mt-5" width="415" height="337" th:alt="#{dna.banding.title}"/>
+		<p class="pt-3 "><span class="imagetitle" th:text="#{dna.banding.photo}"></span></p>
+	</div>	
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p th:utext="#{dna.banding.paragraph2}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<p th:utext="#{dna.banding.paragraph3}"></p>
+		</div>
+	</div>
+	<hr class="my-2 mt-5" />
+	<p id="g-band" class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+	<hr class="my-2 mb-5" />
+	<div class="text-right mb-5">
+		<a href="#top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

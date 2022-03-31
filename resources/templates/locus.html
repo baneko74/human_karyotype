@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(${locus.chromosome.name} + ' :: ' + ${locus.name})"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink='locus', chromId = ${chromosome.id}, locusName=${locus.link}, date=${date})"></div>
+<div class="container lead" id="chromosomes">
+<img th:src="@{/images/titlebar.jpg}" class="img-fluid border-lbr" width="1900" height="212" th:alt="${locus.name}" />
+	<h1 class="font-weight-bold" th:text=${locus.name}></h1>
+	<hr />
+		
+	<section>
+		<h4 th:text="${locus.fullName}"></h4>
+		<h5 class="badge badge-warning"><span th:text="#{locus.position}">Position: </span> <span  th:text="${locus.position}"></span></h5>
+		<div id="fade" class="card mt-3 mb-5 bg-light">
+			<h5 class="font-weight-bold mb-3" th:text="#{organism.role}">Role in the organism:</h5>
+			<p th:utext="${locus.bioRole}" class="link"></p>
+			<h5 class="font-weight-bold mb-3 mt-3" th:text="#{disorder.role}">Role in the disorder:</h5>
+			<p th:utext="${locus.disease.description}" class="link"></p>
+		</div>
+	</section>
+	<hr class="my-2 mt-5" />
+	<p id="lokus" class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+	<hr class="my-2 mb-5" />
+	<div class="text-right mb-5">
+		<a href="#top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

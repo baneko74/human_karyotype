@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(#{page.title.anex.register})"></head>
+<body class="transparent">
+<div th:replace="fragments :: header(activeLink='registration', chromId = '', locusName='', date=${date})"></div>
+<div class="container lead" id="locus">
+	<h1 class="mt-5 mb-5 font-weight-bold text-center" th:text=#{registration}></h1>
+	<div class="d-flex justify-content-center mb-5">
+		<form method="post" th:action="@{/admin/register}" th:object="${data}">
+		<div class="form-group">
+			<label for="name" th:text="#{registration.name}" class="badge badge-info"></label>
+			<input type="text" id="name" name="name" th:field="*{name}" class="form-control col-md-12 border-info"/>
+			<span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+		</div>
+		<div class="form-group">
+			<label for="reg-email" th:text="#{registration.email}" class="badge badge-info"></label>
+			<input type="text" id="reg-email" name="reg-email" th:field="*{email}" class="form-control col-md-12 border-info"/>
+			<span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+		</div>
+		<div class="form-group">
+			<label for="username" th:text="#{registration.username}" class="badge badge-info"></label>
+			<input type="text" id="username" name="username" th:field="*{username}" class="form-control col-md-12 border-info"/>
+			<span class="error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+		</div>
+		<div class="form-group">
+			<label for="password" th:text="#{registration.password}" class="badge badge-info"></label>
+			<input type="password" id="password" name="password" th:field="*{password}" class="form-control col-md-12 border-info"/>
+			<span class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+		</div>
+		<div class="form-group">
+			<label for="confirm" th:text="#{registration.confirm}" class="badge badge-info"></label>
+			<input type="password" id="confirm" name="confirm" th:field="*{confirm}" class="form-control col-md-12 border-info"/>
+			<span class="error" th:if="${#fields.hasErrors('confirm')}" th:errors="*{confirm}"></span>
+		</div>
+		<div class="form-group">
+			<input type="submit" th:value="#{submit.edit.form}" class="btn btn-warning">
+		</div>
+	</form>
+	</div>
+	<hr class="my-4 mb-5 border-warning" />
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Email</title>
+<style>
+	.container {
+		width: 786px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #d1f3f1;
+		border: 1px solid grey;
+		border-radius: 1.2em;
+		padding: 2em;
+	}
+	h2 {
+		color: DeepSkyBlue;
+	}
+	img {
+		float: right;
+		position: absolute;
+		top: 0;
+	}
+	.footer {
+		position: relative;
+		bottom: 0;
+	}
+	.footer a {
+		font-size: .7em;
+	}
+	hr {
+		border: 1px solid LightGrey;
+	}
+	p#text {
+		padding-top: 1em;
+		margin-bottom: 2em;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<img  th:src="|cid:${logo}|"/>
+	<h2>[[${title}]]</h2>
+	<p id="text">[[${message}]]</p>
+	<hr />
+	<div class="footer"><span th:text="${#temporals.format(date, 'dd-MM-yyyy HH:mm:ss')}">[[${date}]]</span></div>
+	<div class="footer"><a th:href="@{${unsubscribe}}">Unsubscribe</a></div>
+</div>
+
+
+</body>
+</html>

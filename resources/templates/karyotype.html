@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(#{page.title.anex.karyotype})"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink='karyotype', chromId = '', locusName='', date=${date})"></div>
+<div class="container lead" id="chromosomes">
+	<img th:src="@{/images/titlebar_2.jpg}" class="img-fluid border-lbr" width="1900" height="212" th:alt="#{karyotype.title}" />
+	<h1 class="font-weight-bold" th:text=#{karyotype.title}></h1>
+	<hr />
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p ><span  th:utext="#{karyotype.paragraph1}"></span><a class="text-info underlined" th:href="@{/methodology/G-banding}" th:utext="#{site.map.banding}"></a><span th:utext="#{karyotype.paragraph1.finish}"></span></p>
+		</div>
+	</div>
+	<div class="container-fluid text-center">
+		<img th:src="@{/images/male_karyotype_spread.png}" class="img-fluid img-thumbnail border border-info mt-5" width="373"  height="241" th:alt="#{karyotype.photo1.alt}"/>
+		<p class="pt-3"> <span class="imagetitle" th:utext="#{karyotype.photo1}"></span> </p>
+	</div>
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p th:utext="#{karyotype.paragraph2}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<p th:utext="#{karyotype.paragraph3}"></p>
+		</div>
+	</div>
+	<div class="container-fluid text-center">
+		<img th:src="@{/images/male_karyotype.png}" class="img-fluid img-thumbnail border border-info mt-5"  width="373"  height="259" th:alt="#{karyotype.photo2.alt}"/>
+		<p class="pt-3"> <span class="imagetitle" th:utext="#{karyotype.photo2}"></span> </p>
+	</div>
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p th:utext="#{karyotype.paragraph4}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<p th:utext="#{karyotype.paragraph5}"></p>
+		</div>
+	</div>
+	<hr class="my-2 mt-5" />
+	<p id="karyo" class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+	<hr class="my-2 mb-5" />
+	<div class="text-right mb-5">
+		<a href="#top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

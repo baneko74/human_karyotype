@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(#{page.title.anex.extraction})"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink='dna-extraction', chromId = '', locusName='', date=${date})"></div>
+<div class="container lead" id="chromosomes">
+	<img th:src="@{/images/titlebar_1.jpg}" class="img-fluid border-lbr" width="1900" height="212" th:alt="#{dna.extraction.title}"/>
+	<h1 class="font-weight-bold" th:text=#{dna.extraction.title}></h1>
+	<hr />
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p th:utext="#{dna.extraction.paragraph1}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<h3 th:text="#{dna.extraction.paragraph2.title}" class="text-info mt-3 responsive"></h3>
+			<div class="pt-3" th:utext="#{dna.extraction.paragraph2}"></div>
+		</div>
+		<div class="col-md-12 padd">
+			<h3 th:utext="#{dna.extraction.paragraph3.title}" class="text-info responsive"></h3>
+			<p th:utext="#{dna.extraction.paragraph3}"></p>
+		</div>
+	</div>	
+	<div class="container-fluid text-center">
+		<img th:src="${#strings.equals(#locale, 'en')} ? @{/images/organic_extraction_en.jpg} : @{/images/organic_extraction_rs.jpg}" class="img-fluid img-thumbnail border border-info mt-5" width="656" height="259" th:alt="#{dna.extraction.photo1.alt}" />
+		<p class="pt-3 mb-5"><span class="badge badge-primary" th:text="#{dna.legend}">Legend: </span> <span class="imagetitle" th:utext="#{dna.extraction.photo1}"></span> </p>
+	</div>
+	<p th:utext="#{dna.extraction.paragraph4}" class="mt-3"></p>
+	<div class="container-fluid text-center">
+		<img th:src="${#strings.equals(#locale, 'en')} ? @{/images/chelex_extraction_en.jpg} : @{/images/chelex_extraction_rs.jpg}" class="img-fluid img-thumbnail border border-info mt-5" width="656" height="259" th:alt="#{dna.extraction.photo2.alt}"/>
+		<p class="pt-3 mb-5"><span class="badge badge-primary" th:text="#{dna.legend}">Legend:</span> <span class="imagetitle" th:utext="#{dna.extraction.photo2}"></span> </p>
+	</div>
+	<p th:utext="#{dna.extraction.paragraph5}" class="mt-3"></p>
+	<div class="container-fluid text-center">
+		<img th:src="${#strings.equals(#locale, 'en')} ? @{/images/solid_phase_en.jpg} : @{/images/solid_phase_rs.jpg}" class="img-fluid img-thumbnail border border-info mt-5" width="656" height="259" th:alt="#{dna.extraction.photo3.alt}" />
+		<p class="pt-3 mb-5 "><span class="badge badge-primary" th:text="#{dna.legend}">Legend:</span> <span class="imagetitle" th:utext="#{dna.extraction.photo3}"></span> </p>
+	</div>
+	<hr class="my-2 mt-5" />
+	<p id="dna-ext" class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+	<hr class="my-2 mb-5" />
+	<div class="text-right mb-5">
+		<a href="#top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

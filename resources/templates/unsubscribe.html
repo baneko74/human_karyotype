@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(#{page.title.anex.cookie})"></head>
+<body id="top" class="transparent">
+<div class="container lead min-height" id="locus">
+	<img th:src="@{/images/titlebar.jpg}" class="img-fluid rounded-bottom border-lbr" width="1900" height="212" th:alt="#{cookie}" />
+	<h1 class="font-weight-bold" th:text=#{unsubscribe.page.title}></h1>
+	<hr id="hr" class="my-4" />
+	<p class="link pb-3" th:text="${answer}"></p>
+	<hr class="my-2" />
+	<p class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+	<hr class="my-2 mb-5" />
+</div>
+</body>
+</html>

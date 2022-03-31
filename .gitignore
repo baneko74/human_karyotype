@@ -1,0 +1,4 @@
+resources/*.properties
+resources/solr-ssl.keystore.p12
+resources/static/images/
+!*resources/static/images/carousel_2.jpg

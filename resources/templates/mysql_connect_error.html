@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+<title th:text="#{page.title}"></title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" th:href="@{/css/final.css}" />
+<link rel="icon" type="image/x-icon" th:href="@{/public/favicon.ico}" />
+</head>
+<body>
+
+<div id="error_container" class="container card pt-3 lead mb-5 mt-5 bg-dark">
+	<div class="card-block">
+		<h3 class="mb-5 d-flex justify-content-center font-weight-bold" th:text="#{resource.unavailable}"></h3>
+		<p class="d-flex justify-content-center" th:text="#{resource.mysql.server}"></p>
+	<div class="d-flex justify-content-center"><img th:src="@{/images/error_503.jpg}" alt="Error 403" class="img-thumbnail img-fluid" /></div>
+	<div class="d-flex justify-content-center p-3"><p><a class="btn btn-info" href="/" th:text=#{go.home}></a></p></div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(#{navbar.search})"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink='search', chromId = '', locusName='', date=${date})"></div>
+<div class="container lead mt-5" id="locus">
+	<div class="container min-height">
+		<h3 id="res_title" class="font-weight-bold text-info"><span  th:text="${not (page eq null)} ? #{search.for}"></span> <span class="text-warning text-decoration-underline" th:text="${query}"></span></h3>
+		<hr />
+		<th:block th:if="${page == null}">
+			<p class="mb-5 search-p text-secondary font-weight-bold" th:text="${error}"></p>
+		</th:block>
+		<th:block th:if="${page != null}">
+			<th:block th:if="${#lists.isEmpty(page.content)}">
+				<p class="search-p"><span th:text="#{sorry.txt}"></span>: <span th:text="${query}"></span></p>
+			</th:block>
+			<th:block th:unless="${#lists.isEmpty(page.content)}">
+				<p><span th:text="#{results.total}"></span><span th:unless="${#strings.equals(#locale, 'en')}"
+				th:text="#{${page.totalElements % page.size eq 1 && page.totalElements != 11 || page.totalElements eq 1} ? 'resj': 
+				${page.totalElements % page.size >= 2 && page.totalElements % page.size <= 4 && page.totalElements != 12 &&
+				page.totalElements != 13 && page.totalElements != 14 || page.totalElements >= 2 && page.totalElements <= 4 ? 'resm' : 'resmm'}}"></span> 
+				<span th:text="${page.totalElements}"></span> 
+				<span th:with="modulus=${page.totalElements % page.size}" th:text="${modulus eq 1 && page.totalElements != 11} ? #{result.doc} : #{results.doc}"></span></p>
+				<hr class="my-2" />
+				<th:block th:each="item : ${page}">
+						<h5 class="inline" ><a th:href="@{${item.chromosomeName != null ? '/chromosomes/' + (item.id) : item.locusUrl != null ? '/chromosomes/' + 
+									item.chromId + '/locus/' + item.locusUrl : item.link}}" class="underlined">
+						[[${item.chromosomeName != null ? item.chromosomeName : item.locusName != null ? item.locusName : item.linkName}]]</a></h5>
+					<span th:if="${item.chromId != null}" th:text="#{locus}"></span>
+					<span th:text="#{parenthesis}" class="snipplet2" th:if="${item.chromId != null}">(</span>
+					
+					<a th:href="@{/chromosomes/{id}(id=${item.chromId})}">
+					<span class="snipplet2" th:if="${item.chromId != null}" th:text="${item.chromId <= 24} ?  
+						#{chromosome} + ${item.chromId eq 23 ? 'X' : item.chromId eq 24 ? 'Y' : item.chromId} :
+						#{chromosome} + ${item.chromId eq 47 ? 'X' : item.chromId eq 48 ? 'Y' : item.chromId - 24}"></span></a>					
+					<span class="snipplet2" th:if="${item.chromId != null}">)</span>
+					<th:block th:each="highlight : ${page.getHighlights(item)}">
+						<th:block th:each="hl : ${highlight.getSnipplets()}">
+						<p class="snipplet" th:utext="'...  ' + ${hl} + '  ...'"></p>
+						</th:block>
+					</th:block>
+					 <hr />					 
+				</th:block>
+				<nav aria-label="Pagination" class="mt-3" th:classappend="${page.totalElements <= 10} ? 'none'"
+				th:with="current = ${page.number +1},
+						 beginIndex = ${T(java.lang.Math).max(0, current - 5)},
+						 endIndex= ${T(java.lang.Math).min(beginIndex + 6, page.totalPages - 1)}">
+				  <ul class="pagination font-weight-medium">
+					<li class="page-item" th:classappend="${page.number eq 0} ? 'disabled' : ''">
+					  <a class="page-link"  th:href="@{/search?page={id}(id = ${page.totalElements / page.totalElements - 1})} + '&amp;q=' + ${query}" th:title="#{first.txt}">
+					  	<span aria-hidden="true" th:class="${page.number eq 0} ? 'white': ''">&laquo;&laquo;</span>
+        				<span class="sr-only">Previous</span>
+					  </a>
+				    </li>
+				    <li class="page-item" th:classappend="${page.number eq 0} ? 'disabled' : ''">
+				      <a class="page-link"  th:href="@{/search?page={id}(id = ${page.number - 1})} + '&amp;q=' + ${query}" th:title="#{previous.txt}">
+						<span aria-hidden="true" th:class="${page.number eq 0} ? 'white' : ''">&laquo;</span>
+        				<span class="sr-only">Previous</span>
+					  </a>
+				    </li>
+				    <!--   -->
+				   
+				    <li class="page-item" 
+				    th:each="i : ${#numbers.sequence(beginIndex, endIndex)}"
+				    th:classappend="${i eq page.number} ? 'active disabled' : ''">
+				    	<a id="page" class="page-link" th:href="@{/search?page={id}(id = ${i})} + '&amp;q=' + ${query}" th:text="${i+1}"></a>
+				    </li>
+				    <li class="page-item" th:classappend="${page.number + 1 eq page.totalPages} ? 'disabled' : ''">
+				      <a class="page-link" th:href="@{/search?page={id}(id= ${page.number + 1})} + '&amp;q=' + ${query}" th:title="#{next.txt}">
+				      	<span aria-hidden="true" th:class="${page.number + 1 eq page.totalPages} ? 'white'">&raquo;</span>
+        				<span class="sr-only">Next</span>
+				      </a>
+				    </li>
+				    <li class="page-item" th:classappend="${page.number eq (page.totalPages - 1)} ? 'disabled' : ''">
+					  <a class="page-link"  th:href="@{/search?page={id}(id = ${page.totalPages - 1})} + '&amp;q=' + ${query}" th:title="#{last.txt}">
+					  	<span aria-hidden="true" th:class="${page.number + 1 eq page.totalPages} ? 'white' : ''">&raquo;&raquo;</span>
+        				<span class="sr-only">Next</span>
+					  </a>
+				    </li>
+				  </ul>
+				</nav>
+				<hr class="my-2 mt-5" />
+				<p class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+				<hr class="my-2 mb-5" />
+				<div class="text-right mb-5">
+					<a href="#top" th:with="modulus=${page.totalElements % page.size}" th:classappend="${page eq null} ? 'none' : ${modulus gt 0 && modulus lt 6 && !page.hasNext() ? 'none' : ''}"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+				</div>
+			</th:block>
+		
+		</th:block>
+
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

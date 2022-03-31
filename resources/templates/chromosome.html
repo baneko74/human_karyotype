@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(${chromosome.name})"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink = 'chromosome', chromId = ${chromosome.id}, locusName='', date=${date})"></div>
+<div class="container lead" id="chromosome">
+	<img th:src="@{/images/titlebar.jpg}" class="img-fluid rounded-bottom border-lbr"  width="1900" height="212" th:alt="${chromosome.name}"/>
+	<h1 class="font-weight-bold" th:text="${chromosome.name}"></h1>
+	<hr />
+	<div>
+		<p>
+			<span class="font-weight-bold text-info" th:text="#{chromosome.size}">Size:</span>
+			<span class="font-weight-bold text-info" th:text="${chromosome.size}"></span><br />
+			<span class="font-weight-bold text-info" th:text="#{chromosome.genes}">Approx. no. of genes:</span>
+			<span class="font-weight-bold text-info" th:text="${chromosome.genes}"></span>
+		</p>
+		
+		<p id="chroms_sec" class="lead"><img class="float-left pr-4" th:src="${chromosome.imgurl}" th:alt="${chromosome.name}"/><span th:utext="${chromosome.description}"></span></p>	
+	</div>
+	<div id="chromosomeDetails" class="card mb-5 mt-5 bg-light" >
+		<p class="font-italic font-weight-bold" th:text="#{chromosome.loci.title}"></p>
+		<div th:each="c : ${chromosome.loci}">
+			<a th:href="@{/chromosomes/{id}(id=${chromosome.id})} + '/locus/' + ${c.link}" th:utext="${c.name} + ' - ' + ${c.fullName}"></a>
+		</div>
+	</div>
+	<hr class="my-2 mt-5" />
+	<p id="browse" class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+	<hr class="my-2 mb-5" />
+	<div class="text-right mb-5">
+		<a href="#top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

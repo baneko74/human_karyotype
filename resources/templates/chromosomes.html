@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(#{page.title.anex.browse})"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink='chromosomes', chromId = '', locusName='', date=${date})"></div>
+<div class="container lead" id="chromosomes">
+		<img th:src="@{/images/titlebar.jpg}" class="img-fluid border-lbr" width="1900" height="212" th:alt="#{browse.title}"/>
+		<h1 class="font-weight-bold" th:text="#{browse.title}">Human chromosomes</h1>
+		<hr />
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p class=" mb-5 lead" th:utext="#{browse.first.p}"></p>
+			<img id="image" th:src="${#strings.equals(#locale, 'en')} ? @{/images/ideogram.png} : @{/images/ideogram_rs.png}" class="img-fluid" width="1200" height="418" th:alt="#{figure.alt}" />
+			<p class="text-center pt-3" ><span class="imagetitle" th:utext="#{figure.title}"></span></p>
+			<p class="mt-5 mb-5 lead" th:utext="#{browse.last.p}"></p>
+	</div>	
+	</div>
+	<div class="row">
+		<div class="col-md-12 mb-5">
+			
+			<table class="table table-striped table-bordered" >
+			<thead class="text-left text-white tableTitle" id="chroms">
+				<tr class="text-center">
+					<th th:text="#{chromosomes.table.name}">Name:</th>
+					<th th:text="#{chromosomes.table.size}">Size:</th>
+					<th th:text="#{chromosomes.table.genes}">Genes:</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr class="text-center" th:each="chromosome : ${chromosomes}">
+						<td><a th:href="@{/chromosomes/{id}(id=${chromosome.id})}"  class="btn btn-outline-info font-weight-bold">[[${chromosome.name}]]</a></td>
+						<td th:text="${chromosome.size}"></td>
+						<td th:text="${chromosome.genes}"></td>
+					</tr>
+				</tbody>	
+		</table>
+		<ul class="nav nav-pills" >
+			<li class="nav-item" th:each="i : ${#numbers.sequence(0, chromosomes.totalPages - 1)}">
+				<a th:href="@{/chromosomes(page= ${i})} + '#chroms'" th:text="${i+1}" th:id="${'chromosomesAct'+ (i+1)}" class="nav-link font-weight-bold info" th:classappend="${currentPage} == ${i} ? 'active disabled':''"></a>
+			</li>
+		</ul>
+		<hr class="my-2 mt-5" />
+		<p id="browse" class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+		<hr class="my-2 mb-5" />
+		<div class="text-right">
+			<a href="#top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+		</div>
+		
+	</div>
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

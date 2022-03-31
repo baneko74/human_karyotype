@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(#{page.title.anex.methodology})"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink='methodology', chromId = '', locusName='', date=${date})"></div>
+<div class="container lead" id="chromosomes">
+	<img th:src="@{/images/titlebar_1.jpg}" class="img-fluid border-lbr" width="1900" height="212" th:alt="#{methodology}"/>
+	<h1 class="font-weight-bold" th:text=#{methodology}></h1>
+	<hr />
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p th:text="#{methodology.first.paragraph}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<p th:utext="#{methodology.second.paragraph}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<p th:utext="#{methodology.third.paragraph}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<p th:utext="#{methodology.fourth.paragraph}"></p>
+		</div>		
+	</div>
+	<div class="row"></div>
+	<div class="container-fluid">
+		<div class="row d-flex justify-content-between mt-5 mb-5">
+			<div class="col-md-3 mt-3">
+				<div class="card">
+					<a th:href="@{/methodology/dna-extraction}"><img class="card-img-top img-thumbnail" th:src="@{/images/erlen.jpg}" width="415" height="337" th:alt="#{card.extraction.title}"/></a>
+					<div class="card-body">
+						<h4 class="card-title text-info" th:text="#{card.extraction.title}">DNA extraction</h4>
+						<p class="card-text" th:text="#{card.extraction.text}">DNA extraction is a process of getting DNA from the cell's nucleus.</p>
+						<a class="btn btn-info" th:href="@{/methodology/dna-extraction}" th:text="#{card.button}">See more</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 mt-3">
+				<div class="card">
+					<a th:href="@{/methodology/G-banding}"><img class="card-img-top img-thumbnail" th:src="@{/images/g_banding.jpg}" width="415" height="337" th:alt="#{card.g.title}"/></a>
+					<div class="card-body">
+						<h4 class="card-tile text-info" th:text="#{card.g.title}">G - banding</h4>
+						<p class="card-text" th:text="#{card.g.text}">G-banding is a method of staining chromosomes to make them visible under the light microscope.</p>
+						<a class="btn btn-info" th:href="@{/methodology/G-banding}" th:text="#{card.button}">See more</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 mt-3">
+				<div class="card">
+					<a th:href="@{/methodology/fluorescent-in-situ-hybridization}"><img class="card-img-top img-thumbnail" th:src="@{/images/FISH.jpg}" width="415" height="337" th:alt="#{card.fish.title}"/></a>
+					<div class="card-body">
+						<h4 class="card-title text-info" th:utext="#{card.fish.title}">Fluorescent in situ hybridization (FISH)</h4>
+						<p class="card-text" th:text="#{card.fish.text}">FISH is a method of hybridization (linking) between specific DNA locus with complementary fluoroscently stained polynucleotids.</p>
+						<a class="btn btn-info" th:href="@{/methodology/fluorescent-in-situ-hybridization}" th:text="#{card.button}">See more</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 mt-3">
+				<div class="card">
+					<a th:href="@{/methodology/polymerase-chain-reaction}"><img class="card-img-top img-thumbnail" th:src="@{/images/dna_part.jpg}" width="415" height="337" th:alt="#{card.pcr.title}" /></a>
+					<div class="card-body">
+						<h4 class="card-title text-info" th:text="#{card.pcr.title}">Polymerase chain reaction (PCR)</h4>
+						<p class="card-text" th:text="#{card.pcr.text}">PCR is a method of amplification specific DNA sequences.</p>
+						<a class="btn btn-info" th:href="@{/methodology/polymerase-chain-reaction}" th:text="#{card.button}">See more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr class="my-2 mt-5" />
+	<p id="method" class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+	<hr class="my-2 mb-5" />
+	<div class="text-right mb-5">
+		<a href="#top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

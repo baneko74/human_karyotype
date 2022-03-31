@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink='search', chromId = '', locusName='')"></div>
+<div class="container lead mt-5" id="locus">
+	<div>
+		<h5 class="mb-5 font-weight-bold gradient text-info" th:text="#{search.for}"></h5>
+		<hr class="mt-2"/>
+		<th:block th:if="${page == null}">
+			<p th:text="#{please.txt}"></p>
+		</th:block>
+		<th:block th:if="${page != null}">
+			<th:block th:if="${#lists.isEmpty(page.content)}">
+				<p><span th:text="#{sorry.txt}"></span>: <span th:text="${query}"></span></p>
+			</th:block>
+			<th:block th:unless="${#lists.isEmpty(page.content)}">
+				<p><span th:text="#{results.total}">Found</span> <span th:text="${page.totalElements}"></span> <span th:text="#{results.doc}">documents</span>.</p>
+				<hr class="my-2" />
+				<th:block th:each="page : ${page}">
+					<h5 th:text="${page.chromosomeName != null ? page.chromosomeName : page.locusName != null ? page.locusName : 'Page:'}"></h5>
+					<h6><a th:href="${page.chromosomeName != null ? '/chromosomes/' + page.id : page.locusName != null ? '/chromosomes/' + 
+									page.chromId + '/locus/' + page.locusName : page.link}">
+						[[${page.chromosomeName != null ? page.chromosomeName : page.locusName != null ? page.locusName : page.link}]]
+					</a></h6> <hr />
+				</th:block>
+			</th:block>
+		</th:block>
+		
+	</div>
+	<div class="text-right mb-5">
+		<a href="#top"><img th:src="@{/images/top.png}" data-toggle="tooltip" data-placement="bottom" th:title="#{top.page}" /></a>
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

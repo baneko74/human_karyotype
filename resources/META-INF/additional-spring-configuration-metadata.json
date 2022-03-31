@@ -1,0 +1,7 @@
+{"properties": [
+  {
+    "name": "chromosomes.list.page-size",
+    "type": "java.lang.Integer",
+    "description": "Sets a maximum nuber of chromosomes for display per page."
+  }
+]}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(#{page.title.anex.pcr})"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink='PCR', chromId = '', locusName='',date=${date})"></div>
+<div class="container lead" id="chromosomes">
+	<img th:src="@{/images/titlebar_1.jpg}" class="img-fluid border-lbr" width="1900" height="212" th:alt="#{pcr.title}"/>
+	<h1 class="font-weight-bold" th:text=#{pcr.title}></h1>
+	<hr />	
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p th:utext="#{pcr.paragraph1}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<p th:utext="#{pcr.paragraph2}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<h3 th:text="#{pcr.paragraph3.title}" class="text-info mt-3 responsive"></h3>
+			<p th:utext="#{pcr.paragraph3}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<div class="pt-1" th:utext="#{pcr.paragraph4}"></div>
+		</div>
+		<div class="col-md-12 padd">
+			<h3 th:utext="#{pcr.paragraph5.title}" class="text-info responsive"></h3>
+			<p th:utext="#{pcr.paragraph5}"></p>
+		</div>
+	</div>	
+	<div class="container-fluid text-center">
+		<img th:src="${#strings.equals(#locale, 'en')} ? @{/images/pcr_en.png} : @{/images/pcr_rs.png}" class="img-thumbnail border border-info mt-5" width="920" height="480" th:alt="#{pcr.photo1.alt}"/>
+		<p class="pt-3"><span class="imagetitle" th:utext="#{pcr.photo1}"></span></p>
+	</div>
+	<h5 id="steps" class="btn btn-info mt-3 font-weight-bold" th:text="#{pcr.steps}"></h5>
+	<div class="container-1 jumbotron">
+			<div class="box-1">
+				<p th:utext="#{pcr.paragraph6}"></p>
+				<img id="micro" class="p-5" th:src="@{/images/microscope_vector.png}" width="216" height="280" th:alt="#{pcr.photo.micro}"/>
+			</div>
+			<div class="box-2">
+				<p th:utext="#{pcr.paragraph7}"></p>
+			</div>
+			<div class="box-3">
+				<p th:utext="#{pcr.paragraph8}"></p>
+			</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p th:text="#{pcr.paragraph9}"></p>
+		</div>
+	</div>
+	
+	<hr class="my-2 mt-5" />
+	<p id="pcrurl" class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+	<hr class="my-2 mb-5" />
+	<div class="text-right mb-5">
+		<a href="#top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

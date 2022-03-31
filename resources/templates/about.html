@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(#{page.title.anex.about})"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink='about', chromId = '', locusName='', date=${date})"></div>
+<div class="container lead" id="chromosomes">
+	<img th:src="@{/images/titlebar.jpg}" class="img-fluid border-lbr" width="1900" height="212" th:alt="#{about}"/>
+	<h1 id="about" class="font-weight-bold" th:text=#{about}></h1>
+	<hr />
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p class="link" th:text="#{about.paragraph1}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<p  class="link" th:utext=#{about.paragraph2}></p>
+		</div>
+		<div class="col-md-12 padd">
+			<div class="link padd" th:utext=#{about.paragraph3}></div>
+		</div>
+	</div>
+	<p class="link text-info font-weight-bold" th:text="#{about.thanks}"></p>
+	<hr class="my-2" />
+	<p id="karyo" class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+	<hr class="my-2 mb-5" />
+	<div class="text-right mb-5">
+		<a href="#top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

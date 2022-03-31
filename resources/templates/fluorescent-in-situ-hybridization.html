@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head(#{page.title.anex.fish})"></head>
+<body id="top" class="transparent">
+<div th:replace="fragments :: header(activeLink='FISH', chromId = '', locusName='', date=${date})"></div>
+<div class="container lead" id="chromosomes">
+	<img th:src="@{/images/titlebar_1.jpg}" class="img-fluid border-lbr" width="1900" height="212" th:alt="#{fish.title}"/>
+	<h1 class="font-weight-bold" th:utext=#{fish.title}></h1>
+	<hr />
+	<div class="row">
+		<div class="col-md-12 padd">
+			<p th:utext="#{fish.paragraph1}"></p>
+		</div>
+		<div class="col-md-12 padd">
+			<p th:utext="#{fish.paragraph2}"></p>
+		</div>
+	</div>
+	<div class="container-fluid text-center">
+		<img th:src="${#strings.equals(#locale, 'en')} ? @{/images/fish_method_en.jpg} : @{/images/fish_method_rs.jpg}" class="img-fluid img-thumbnail border border-info mt-5" width="881" height="751" th:alt="#{fish.photo1.alt}" />
+		<p class="pt-3 "><span class="imagetitle" th:utext="#{fish.photo1}"></span></p>
+		<p class="mb-5 "><span class="badge badge-primary imagetitle" th:text="#{dna.legend}">Legend: </span> <span class="imagetitle" th:utext="#{fish.photo1.legend}"></span> </p>
+	</div>
+	<p th:utext="#{fish.paragraph3}"></p>
+	<div class="container-fluid">
+		<div class="container-2">
+			<div class="box-4 padd">
+				<img th:src="@{/images/fish_abl_bcr.jpg}" class="img-fluid img-thumbnail border border-info mt-5" width="213" height="244" th:alt="#{fish.photo2.alt}" />
+				<p class="pt-3"><span class="imagetitle" th:utext="#{fish.photo2}"></span></p>
+			</div>
+			<div class="box-5 padd">
+				<div class="container-fluid text-center">
+					<p class="ml-n3" th:utext="#{fish.paragraph4}"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<hr class="my-2 mt-5" />
+	<p id="fishurl" class="lightblue h6 font-weight-bold font-italic">&copy; www.humankaryotype.com</p>
+	<hr class="my-2 mb-5" />
+	<div class="text-right mb-5">
+		<a href="#top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></a>
+	</div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

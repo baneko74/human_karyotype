@@ -1,0 +1,931 @@
+@charset "UTF-8";
+@font-face {
+	font-family: "custom-font";
+	src: url("Merriweather-Reg.otf");
+}
+@font-face {
+	font-family: "custom";
+	src: url("Merriweather-Black.otf");
+}
+div#chromosomes h1,
+div#chromosome h1, 
+div#locus h1 {
+	color: #21a2b8;
+	font-style: oblique;
+	text-shadow:2px 2px 5px DarkGrey;
+}
+.carousel-indicators li {
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        margin: 0 5px;
+}
+
+span#dna {
+	border-radius: 3vh;
+	padding: .4em;
+}
+a[href="#top"] > i {
+	color: #17a2b8;
+}
+a[href="#top"]:hover > i {
+	color: #0f8a9d;
+}
+a#chromosomesAct1.nav-link.active,
+a#chromosomesAct2.nav-link.active,
+a#chromosomesAct3.nav-link.active,
+a#chromosomesAct4.nav-link.active {
+	background-color: #21a2b8;
+}
+a#chromosomesAct1.nav-link:hover,
+a#chromosomesAct2.nav-link:hover,
+a#chromosomesAct3.nav-link:hover,
+a#chromosomesAct4.nav-link:hover {
+	color: DarkGrey;
+}
+.min-height {
+	min-height: 400px;
+}
+.dev {
+	color: Gold;
+}
+span > span#copyright {
+	font-size: .9em;
+}
+a.underline {
+	text-decoration: underline;
+}
+a.underline:hover {
+	text-decoration: none;
+}
+.dev a {
+	color: rgba(112, 193, 249, 1);
+}
+.lightgreen {
+	color: LightGreen;
+}
+.lightblue {
+	color: LightBlue;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+.none {
+	display: none;
+}
+.snipplet {
+	font-size:.9em;
+	font-style: italic;
+}
+.snipplet2{
+	font-size:.9em;
+	font-style: italic;
+}
+img[width="1900"] + h1 {
+		margin-top: 1em;
+}
+.inline {
+	display: inline;
+}
+.sitemap {
+	word-spacing: 1em;
+	font-size: 1em;
+}
+.transparent {
+	background: rgba(224, 255, 255, 0.3);
+}
+.tableTitle {
+	background-color: DarkCyan;
+}
+.restpoints {
+	list-style: none;
+	background: rgba(193, 242, 250, .3);
+	line-height: 1.8em;
+	border: 1px solid lightgrey;
+}
+.restpoints li::before {
+	content: "\2726";
+	color: #17a2b8;
+	margin-left: -.5em;
+	display: inline-block;
+	width: 1em;
+	font-weight: bold;
+}
+ul.blockquote {
+	margin-top: .8em;
+	padding-top: 1em;
+	padding-left:2em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	border-radius: 3vh;
+}
+.map {
+	background-color: #337ba4;
+	color: #91c7ef;
+	border-radius: 2vh;
+}
+
+a.btn.btn-outline-secondary:hover {
+	background-color: #1b68a1;
+}
+.error {
+	color: #ffffff;
+	font-weight: bold;
+	background-color: #fe1b59;
+	margin-top: 5px;
+	border-radius: 5px;
+	padding-left: 2px;
+	padding-right: 4px;
+	font-size: .8em;
+}
+.hyphenate {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;	
+}
+.login-error {
+	color: #ffffff;
+	border: 1px solid red;
+	width:60%;
+	margin: auto;
+	background-color: #fe1b59;
+	padding:.1em;
+	font-weight: bold;
+}
+.address {
+		font-size: 1em;
+		letter-spacing: 2px;
+}
+.success {
+	color: #ffffff;
+	background-color: MediumSeaGreen;
+	margin-top: 5px;
+	border-radius: 5px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+h6 small {
+	color: MediumSeaGreen;
+}
+.info {
+	color: DeepSkyBlue;
+}
+.ref-size {
+	font-size: .8em;
+}
+.highlight {
+	color:#17a2b8;
+	font-weight: bold;
+}
+.info:visited {
+	color: #17a2b8;
+}
+.info:hover {
+	color: PowderBlue;
+}
+.gold {
+	color: Gold;
+}
+.tooltip [class$="inner"] {
+	font-weight: bold;
+	font-size: .8em;
+	background-color: rgba(112, 193, 249, 1);
+	border: 1px solid #17a2b8;
+}
+.tooltip [class$="arrow"] {
+ 	display: none;
+}
+p#naslov.badge {
+	font-size:.9em;
+}
+.myborder {
+	padding-left: .3em;
+	font-size: .8em;
+	color: #17a2b8;
+}
+.bgd {
+	background-image:url("../images/microscope.jpg");
+	background-repeat: no-repeat;
+	background-position: -100px 0px;
+	background-attachment: fixed;
+}
+div#error_container {
+	color: DeepSkyBlue;
+	width:50%;
+	height: 50%;
+	border-radius: 3vh;
+}
+
+hr#hor1,hr#hor2,hr#hor3 {
+	width: 85%;
+}
+.dropdown-menu li{
+	text-align: center;
+}
+.dropdown-menu li a:hover {
+	text-decoration: underline;
+}
+h3#not_found_title {
+	margin-top: 1em;
+}
+.dropdown-menu a.nav-link {
+	padding:.2em!important;
+	margin-bottom:.1em;
+}
+.dropdown-menu li a {
+	display: block;
+}
+.dropdown-menu {
+	background-color: #e9ecef!important;
+}
+.underlined {
+	text-decoration: underline;
+}
+a.underlined:hover {
+	text-decoration: none;
+}
+.white {
+	color: Silver!important;
+}
+ol li {
+	padding:.5em;
+}
+p.twitter {
+	display: block;
+	border: 1px solid #c6c6c6;
+	border-radius: 15px;
+	margin-top:1em;
+}
+ul.dropdown-menu a {
+	text-decoration:none;
+}
+.fixed {
+	width:75%;
+	height:650px;
+	margin:0 auto;
+	background-image: url("../images/microscope.jpg");
+	border-radius: 5px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat:no-repeat;
+	opacity: .65;
+}
+.border-lbr {
+	border-bottom:1px solid #17a2b8;
+	border-left:1px solid #17a2b8;
+	border-right:1px solid #17a2b8;
+}
+.upperborder {
+	border: 3px solid #fe1b59;
+}
+a#lche,a#lcae,a#lcme,a#lcke,a#lccse,a#lcce,a#lclce,a#lcre,
+a#lcle,a#lcse,a#lcde,a#lcge,a#lcfe,a#lcpe,a#lccte,
+a#lchr,a#lcar,a#lcmr,a#lckr,a#lccsr,a#lccr,a#lclcr,a#lcrr,
+a#lclr,a#lcsr,a#lcdr,a#lcgr,a#lcfr,a#lcpr,a#lcctr, a#lcnpe,a#lcnps {
+	color: grey;
+}
+
+a#lche:hover,a#lcae:hover,a#lcme:hover,a#lcke:hover,
+a#lccse:hover,a#lcce:hover,a#lclce:hover,a#lcre:hover,
+a#lcle:hover,a#lcse:hover,a#lcde:hover,a#lcge:hover,a#lcfe:hover,
+a#lcpe:hover,a#lccte:hover,a#lchr:hover,a#lcar:hover,a#lcmr:hover,
+a#lckr:hover,a#lccsr:hover,a#lccr:hover,a#lclcr:hover,a#lcrr:hover,
+a#lclr:hover,a#lcsr:hover,a#lcdr:hover,a#lcgr:hover,a#lcfr:hover,
+a#lcpr:hover,a#lcctr:hover, a#lcnpe:hover,a#lcnps:hover {
+	color: #17a2b8;
+}
+ul.dropdown-menu {
+	color: #50474e;
+	background-color: #e9ecef;
+}
+ul#my_menu li a.nav-link:hover {
+	color: #17a2b8;
+	border-radius:1vh;
+}
+.link a {
+	text-decoration: underline;
+}
+.bracket {
+	font-size: .8em;
+}
+.text-shadow {
+	text-shadow:2px 2px 5px #000;
+}
+.col-12 h5 {
+	font-size: 1em;
+}
+.span-center {
+	display: inline-block;
+	width:100%;
+	margin:auto;
+	border-radius: 5vh;
+	padding: .4em;
+}
+.padd p{
+	padding-top: 1em;
+	text-align: left;
+}
+.jumbotron {
+	border-radius: 3vh;
+}
+.jumbotron img {
+	margin-top:0vh;
+	border-radius: 3vh;
+}
+.jumbotron h2, .jumbotron hr + p {
+	font-family: "custom-font", sans-serif;
+}
+.jumbotron img {
+	margin-top: -20px;
+}
+div.fixed p {
+	border-radius: 3vh;
+	color: rgba(255,255,255,1);
+	background-color: rgba(104,194,209, .6);
+}
+input[type=search]{
+	background-color:#e9ecef;
+}
+input[type=search], input[type=search] + button {
+	border-radius: 3vh;
+}
+.search-p {
+	padding-bottom:2em;
+	margin:0;
+}
+ul.pagination li.page-item.active a{
+	color: White;
+	background:rgba(23,162,184, 1);
+	font-weight: bold;
+}
+ul.pagination li.page-item a {
+	color: #17a2b8;
+	font-weight: bold;
+}
+ul.pagination li.page-item a:hover {
+	background: rgba(23, 162, 184, .1);
+	color: DarkGrey;
+}
+div#slides h1{
+		font-family: "custom-font", sans-serif;
+		word-spacing: 5px;
+		letter-spacing: .7vh;
+}
+.disclaimer {
+	font-style: italic;
+	font-size: .8em;
+	color: #ffff00;
+}
+footer {
+	color:#d5d5d5;
+	padding:2em;
+	margin-bottom:0;
+}
+footer hr.light {
+	border:1px solid grey;
+}
+a.btn-outline-secondary:hover {
+	background-color: #17a2b8;
+	color: white;
+}
+.box-1, .box-2, .box-3 {
+	padding-top:0;
+	padding: 0em .9em 0em .7em;
+	width: 33%;
+}
+.container-1 {
+	padding-left: 2em;
+}
+div#fade p{
+	padding: 2em;
+	padding-top: 1em;
+}
+div#fade h5 {
+	padding: 0 2em;
+}
+div#fade {
+	padding-top: 2em;
+}
+div#chromosomeDetails {
+	padding: 3em;
+}
+div#chromosomeDetails div {
+	margin-top:.6em;
+}
+.imagetitle {
+	font-weight: bold;
+	font-size: .8em;
+}
+p#chroms_sec {
+	margin-top: 2.5em;	
+}
+.login-form {
+	border: 1px solid lightgrey;
+	padding: 1em;
+}
+
+/*            MEDIA QUERIES   				*/
+
+@media screen and (max-width:992px){
+	ul#my_menu li a:hover {
+		background-color: transparent!important;
+	}
+	
+}
+@media screen and (max-width: 420px){
+	ul.restpoints li a {
+		white-space: normal;
+		overflow-wrap: break-word;
+	}
+	.border-lbr {
+		margin-top: -.4em;
+		padding-top:0;
+	}
+	nav a > img.littleimg {
+		display: none;
+	}
+	nav > #upper_form {
+		margin-right: 1em;
+	}
+	
+}
+@media screen and (min-width: 470px) and (max-width:576px){
+	nav a > img.littleimg {
+		left:4em;
+	}
+}
+@media screen and (max-width:576px){
+	.myborder {
+		font-size: .7em;
+	}
+	.address {
+		font-size: .8em;
+	}
+	span > span#copyright {
+		font-size: .7em;
+	}
+	div#p-text-over {
+		display: none;
+	}
+	div#home {
+		padding:1em .5em;
+	}
+	div > a > i.fas {
+		font-size: 1.5em;
+	}
+	section > h4 {
+		font-size: 1em;
+	}
+	section {
+		margin-left: .5em;
+	}
+	p#chroms_sec {
+		margin-top: 0em;	
+	}
+	img[width="1900"] + h1 {
+		padding-left: .5em;
+	}
+	img[width="1900"] + h1 + hr {
+		width: 95%;
+	}
+	.sitemap {
+		word-spacing: 0em;
+	}
+	.sitemap a {
+		font-size: 1em;
+		font-weight: bold;
+	}
+	div span#chroname {
+		display: none;
+	}
+	ul.restpoints li  {
+		font-size: .9em;
+	}
+	ul.restpoints li a#rest_all,
+	ul.restpoints li a#rest_x,
+	ul.restpoints li a#rest_y  {
+		font-size: 1em;
+	}
+	.lightblue {
+		font-size: .8em;
+	}
+	p#browse.lightblue, 
+	p#method.lightblue, 
+	p#karyo.lightblue, 
+	p#lokus.lightblue,
+	p#dna-ext.lightblue,
+	p#g-band.lightblue,
+	p#pcrurl.lightblue,
+	p#fishurl.lightblue{
+		font-size: .7em;
+	}
+	.footer {
+		margin: 0;
+		padding: 0;
+	}
+	#hor1.my-4,#hor2.my-4,#hor3.my-4 {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	p#p1-home, p#p2-home, 
+	p#p3-home, p#p4-home, 
+	p#p5-home, p#p6-home {
+		padding-top: 1em;
+	}
+	/* form#upper_form {
+		float: right;
+		right: 10;
+	} */
+	h3#res_title {
+		font-size: 1.5em;
+	}
+	ul.dropdown-menu {
+		width: 50%;
+	}
+	ul.dropdown-menu li a{
+		font-size:1em;
+	}
+	.navbar-font-size {
+		font-size: 1em;
+	}
+	img[data-toggle] {
+		width:1.2em;
+		height:1.2em;
+	}
+	.tooltip {
+		font-size:.7em;
+	}
+	div p {
+		margin-left: 0;
+	}
+	span.error, span.success {
+		font-size: .9em;
+	}
+	
+	h3 span.badge {
+		font-size: .7em;
+	}
+	#lower_form input {
+		font-size: 1em;		
+	} 
+	button.navbar-toggler {
+		font-size: 1em;
+	}
+	
+	#upper_form .form-control {
+		width:65%;
+		margin-right:.3em;
+	}
+	a.navbar-brand img {
+		width:5.0em;
+	}
+	.littleimg {
+		position: absolute;
+		right: 12.7em;
+		top: .3em;
+	}
+	#upper_form {
+		position: absolute;
+		top: 0px;
+		right: 0;
+		padding: 0;
+		width: 55%;
+		font-size: .9em;
+	}
+	#upper_form input {
+		width: 100%!important;
+	}
+	#upper_form button {
+		display: none;
+	}
+	div#slides {
+		display: none;
+	}
+	.col-md-4 p, .col-md-6 p {
+		font-size: .9em;
+		padding:0;
+	}
+	.col-md-4 .jumbotron p {
+		font-size: 1.1em;
+	}
+	.jumbotron h2 {
+		font-size: 1.5em;
+	}
+	div#chromosomes p, 
+	div#chromosome p {
+		padding: .5em;
+		font-size: .9em;
+	}
+	div#chromosomes table a , 
+	div#chromosomes table,
+	div#chromosomes ul li a,
+	div#chromosome div div a
+	  {
+		font-size: .8em;
+	}
+	div#locus {
+		font-size: 1.1em;
+	}
+	hr#hr {
+		margin-top: 0;
+	}
+	.pcr-p {
+		display: block;
+		clear: both;
+	}
+	div#chromosomes h1, 
+	div#chromosome h1 {
+		font-size: 1.2em;
+	}
+	div#locus h4,h1{
+		font-size:1.5em;
+	}
+	h5 {
+		font-size: 1em;
+	}
+	form#upper_form button, form#upper_form input {
+		font-size:1em;
+	}
+	div#error_container, div#error_container h3{
+		font-size: .9em;
+		padding-top: 0;
+	}
+	div#error_container h3 {
+		font-size: 1.1em;
+		padding-top: .5em;
+	}
+	.error {
+		font-size: .8em;
+	}
+	.responsive {
+		font-size: 1.4em;
+	}
+	strong.btn-warning {
+		font-size: 1em;
+	}
+	p.disclaimer {
+		font-size: .8em;
+	}
+	p.ref-size {
+		font-size: .7em;
+	}
+	div#fade p, div#fade h5 {
+		padding-right: 0.7em;
+		padding-left: 0.7em;
+	}
+	h1.mb-5 {
+		margin-bottom:.5em;
+	}
+	div#chromosomeDetails {
+		padding: 1em;
+	}
+	li.page-item a#page {
+		display: none;
+	}
+	.fixed {
+		background-position: right;
+		background-size: auto;
+	}
+	.twitter {
+		width: 80%;
+	}
+	div h3 span#dna {
+		width: 100%;
+		margin: auto;
+	}
+	.container-1.jumbotron {
+		padding: 0.7em .5em;
+	}
+	.box-1, .box-2, .box-3 {
+		padding-bottom:1em;
+		width: 100%;
+		padding: 0em .3em .5em 0em;
+		margin: 0;
+	}
+	h5#steps {
+		width: 100%;
+		margin: auto;
+		margin-bottom: .5em;
+	}
+	.container-1 img {
+		display: none;
+	}
+	p.imagetitle, span.imagetitle {
+		font-size: .8em;
+	}
+	div#lower_text div p.imagetitle {
+		font-size: .7em;
+	}
+	ul#pcr_steps li , ul#extractionUl li{
+		font-size: .9em;
+	}
+}
+
+@media screen and (min-width: 576px) and (max-width:767px){
+	.box-1 p, .box-2 p, .box-3 p{
+		font-size: 1.2em;
+	}
+	h3#res_title {
+		font-size: 1.3em;
+	}
+	ul.dropdown-menu li a{
+		font-size:.9em;
+	}
+	.navbar-font-size {
+		font-size: .9em;
+	}
+	span.error, span.success {
+		font-size: .9em;
+	}
+	.carousel-caption h1 {
+		font-size: 200%;
+	}
+	.carousel-caption h3 {
+		font-size: 1.2em;
+	}
+	.carousel-caption .btn {
+		font-size: 80%;
+	}
+	#upper_form {
+		position: absolute;
+		top: 0.6em;
+		left: 90px;
+	}
+	.col-md-4 p, .col-md-6 p {
+		font-size: .9em;
+	}
+	.col-md-4 .jumbotron p {
+		font-size: 1.2em;
+	}
+	.jumbotron h2 {
+		font-size: 1.4em;
+	}
+	div#chromosomes p, 
+	div#chromosome p {
+		font-size: .9em;
+	}
+	div#chromosomes table a , 
+	div#chromosomes table, 
+	div#chromosomes table,
+	div#chromosomes ul li a,
+	div#chromosome div div a {
+		font-size: .8em;
+	}
+	
+	div#chromosomes h1, 
+	div#chromosome h1
+	{
+		font-size: 1.5em;
+	}
+	div#locus h1{
+		font-size:1.3em;
+	}
+	div#locus div {
+		font-size: .9em;
+	}
+	h5{
+		font-size: .9em;
+	}
+	form#upper_form button, form#upper_form input {
+		font-size:.9em;
+	}
+	div#error_container, div#error_container h3{
+		font-size: 1.1em;
+		padding-top: 0;
+	}
+	div#error_container h3 {
+		font-size: 1.1em;
+	}
+	.box-4 p {
+		font-size: 1.41em;
+	}
+	.box-5 p {
+		font-size: 1.1em;
+	}
+	div#lower_text div p.imagetitle {
+		font-size: .75em;
+	}
+	#lower_form {
+		width: 65%;
+	}
+}
+@media screen and (min-width: 767px) and (max-width: 992px) {
+	ul.dropdown-menu li a{
+		font-size:.9em;
+	}
+	.navbar-font-size {
+		font-size: .9em;
+	}
+	.carousel-caption h1 {
+		font-size: 250%;
+	}
+	.carousel-caption h3 {
+		font-size: 1.5em;
+	}
+	.carousel-caption .btn {
+		font-size: 90%;
+	}
+	#upper_form {
+		position: absolute;
+		float: right;
+		top: 0.6em;
+		left: 90px;
+	}
+	.col-md-4 p, .col-md-6 p {
+		font-size: .9em;
+	}
+	.col-md-4 .jumbotron p {
+		font-size: 1.1em;
+	}
+	.jumbotron h2 {
+		font-size: 1.5em;
+	}
+	div#home {
+		padding-top:1.3em;
+	}
+	form#upper_form button, form#upper_form input {
+		font-size:.9em;
+	}
+	div#error_container, div#error_container h3{
+		font-size: 1.1em;
+		padding-top: 0;
+	}
+	div#lower_text div p.imagetitle {
+		font-size: .8em;
+	}
+	
+}
+@media screen and (min-width: 992px) and (max-width: 1200px){
+	#upper_form input, #upper_form button {
+	font-size:.9em;
+	}
+	ul.dropdown-menu li a{
+		font-size:.9em;
+	}
+	.navbar-font-size {
+		font-size: .9em;
+	}
+	.carousel-caption h1 {
+		font-size: 300%;
+	}
+	.carousel-caption h3 {
+		font-size: 1.7em;
+	}
+	div#home {
+		padding-top:1.3em;
+	}
+}
+@media screen and (min-width:1200px) {
+	div#home {
+		padding-top:1.3em;
+		padding: 3.3em;
+	}
+	#upper_form input, #upper_form button {
+		font-size:1em;
+	}
+}
+@media screen and (min-width: 992px) {
+	.container-1, .container-2 {
+		display: flex;
+	}
+	.box-1, .box-2, .box-3, .box-4, .box-5{
+		flex: 1;
+	}
+	img[alt^=Sectigo] {
+		float: right;
+	}
+}
+@media screen and (min-width:576px) {
+	img#virtual_img {
+		display: none;
+	}
+	
+}
+@media screen and (min-width:576px) and (max-width:992px) {
+	
+	.box-1, .box-2, .box-3 {
+		padding-top:0;
+		padding: 0em .9em 0em .7em;
+		width: 100%;
+	}
+	.box-1, .box-2 {
+		padding-bottom: 1em;
+	}
+	.container-1 img {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
